@@ -23,9 +23,6 @@ class Movie{
     public function getTrailer() {
         return $this->trailer;
     }
-    public function getLanguage(){
-        
-    }
     public function getStar(){
         $starFull = round($this->vote /2);
         return $starFull;

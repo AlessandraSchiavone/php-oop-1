@@ -58,25 +58,27 @@
         // $movie2 = new Movie();
     ?>
     <main>
+        <!-- Primo Film -->
         <article class="movie">
+            <!-- Poster -->
             <div class="col-1">
                 <img src="<?= $movie1->poster;?>" alt="">
             </div>
             <div class="col-2">
                 <h2><?= $movie1->original_title; ?></h2>
+                <!-- Bandiera -->
                 <div class="band">
                     <?php
                      if($movie1->original_language == "it"){
                     ?>
                     <img src="img/it.png" >
-                    
                     <?php  
                     }elseif ($movie1->original_language == "en"){
                      ?>
                     <img src="img/en.png" >
                   <?php  }; ?>
-        
-                    </div>
+                </div>
+                <!-- Stars -->  
                 <span class="stars">
                  
                      <?php 
@@ -87,7 +89,6 @@
                     
                 </span>
                 <span class="stars">
-                 
                      <?php 
                      for($i=0; $i< (5 - $movie1->getStar()); $i++){
                         ?>
@@ -95,9 +96,11 @@
                         <?php }; ?>   
                     
                 </span>
+                <!-- Trama -->
                 <h3>Trama:</h3>
                 <p><?= $movie1->getExcerpt(); ?></p>
                 <div>
+                    <!-- Cast attori -->
                     <h3>Cast:</h3>
                     <ul>
                     <?php foreach ($movie1->actors as $actor ) {
@@ -107,6 +110,7 @@
                     </ul>    
                 </div>
                 <div>
+                    <!-- Generi -->
                    <h3>Genere:</h3> 
                     <ul>
                     <?php foreach ($movie1->genres as $genre ) {
@@ -115,54 +119,54 @@
                     <?php } ?> 
                     </ul>     
                 </div>
+                <!-- link trailer -->
                 <div>
                     <a href="<?= $movie1->trailer; ?>" target="_blank">Guarda il trailer</a>
                 </div>
-            </div>
-            
-          
-           
+            </div>   
         </article>
+        <!-- Secondo Film -->
         <article class="movie">
+            <!-- Poster -->
             <div class="col-1">
                 <img src="<?= $movie2->poster;?>" alt="">
             </div>
             <div class="col-2">
                 <h2><?= $movie2->original_title; ?></h2>
-                <div class="band">
+                <!-- Bandiera -->
+                <div class="band">    
                     <?php
                      if($movie2->original_language == "it"){
                     ?>
                     <img src="img/it.png" >
-                    
+    
                     <?php  
                     }elseif ($movie2->original_language == "en"){
                      ?>
                     <img src="img/en.png" >
-                  <?php  }; ?>
+                    <?php  }; ?>
         
                     </div>
+                <!-- Stars -->   
                 <span class="stars">
-                 
                      <?php 
                      for($i=0; $i< $movie2->getStar(); $i++){
                         ?>
                         <i class="fas fa-star"></i>    
                         <?php }; ?>   
-                    
                 </span>
                 <span class="stars">
-                 
                      <?php 
                      for($i=0; $i< (5 - $movie2->getStar()); $i++){
                         ?>
                         <i class="far fa-star"></i>    
-                        <?php }; ?>   
-                    
+                        <?php }; ?>     
                 </span>
+                <!-- Trama -->
                 <h3>Trama:</h3>
                 <p><?= $movie2->getExcerpt(); ?></p>
                 <div>
+                    <!-- Cast attori -->
                     <h3>Cast:</h3>
                     <ul>
                     <?php foreach ($movie2->actors as $actor ) {
@@ -172,6 +176,7 @@
                     </ul>    
                 </div>
                 <div>
+                    <!-- Generi -->
                    <h3>Genere:</h3> 
                     <ul>
                     <?php foreach ($movie2->genres as $genre ) {
@@ -180,17 +185,12 @@
                     <?php } ?> 
                     </ul>     
                 </div>
+                <!-- link trailer -->
                 <div>
                     <a href="<?= $movie2->trailer; ?>" target="_blank">Guarda il trailer</a>
                 </div>
-            </div>
-            
-          
-           
-        </article>
-        
+            </div> 
+        </article>      
     </main>
-    
-    
 </body>
 </html>
